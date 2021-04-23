@@ -53,7 +53,7 @@ module.exports = (
             );
 
           if (options.sourceMap) {
-            const destination = file.dest.split('/').pop().split('.')[0];
+            const destination = file.dest.split('/').pop();
 
             const mapFileName = options.sourceMap.filename
               ? options.sourceMap.filename
