@@ -52,6 +52,14 @@ module.exports = (
               {},
             );
 
+          if (options.sourceMap) {
+            const mapFileName = options.sourceMap.filename
+              ? options.sourceMap.filename
+              : `${file.dest}.map`;
+
+            options.sourceMap.url = mapFileName;
+          }
+
           // Minify file code.
           const result = await minify(src, options);
 
