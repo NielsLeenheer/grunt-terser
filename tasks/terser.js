@@ -53,9 +53,11 @@ module.exports = (
             );
 
           if (options.sourceMap) {
+            const destination = file.dest.split('/').pop().split('.')[0];
+
             const mapFileName = options.sourceMap.filename
               ? options.sourceMap.filename
-              : `${file.dest}.map`;
+              : `${destination}.map`;
 
             options.sourceMap.url = mapFileName;
           }
